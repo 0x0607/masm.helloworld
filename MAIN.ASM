@@ -1,0 +1,16 @@
+.MODEL	SMALL
+.CODE
+MAIN: 	
+	MOV AX,@DATA
+	MOV DS,AX
+	MOV DX,OFFSET mesg
+	MOV AH,09H	
+	INT 21H
+	MOV AH,4CH
+	INT 21H
+
+.DATA
+	mesg DB 'HelloWorld',0DH,0AH
+	     DB 'i`m 0x0607',0DH,0AH,'$'
+.STACK
+	END MAIN
